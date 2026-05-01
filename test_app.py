@@ -2,6 +2,8 @@
 from app import app
 
 # Test home route
+
+
 def test_home():
     client = app.test_client()
     response = client.get("/")
@@ -10,6 +12,8 @@ def test_home():
     assert b"Flask ML App is running successfully" in response.data
 
 # Test prediction route
+
+
 def test_predict():
     client = app.test_client()
 

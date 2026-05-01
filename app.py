@@ -10,11 +10,15 @@ app = Flask(__name__)
 model = joblib.load("model.pkl")
 
 # Home route
+
+
 @app.route("/")
 def home():
     return "Flask ML App is running successfully!"
 
 # Prediction route
+
+
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.get_json()
@@ -29,6 +33,7 @@ def predict():
         "input": feature_value,
         "prediction": prediction
     })
+
 
 # Run app
 if __name__ == "__main__":
